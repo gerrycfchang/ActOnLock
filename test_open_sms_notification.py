@@ -17,9 +17,6 @@ class TestActionOnNotification(GaiaTestCase):
         GaiaTestCase.setUp(self)
         
         sys.path.append("./")
-        #sys.path.append("./tests/functional/WPA-EAP")
-
-
 
     def test_lock_screen_open_sms_notification(self):
         lock_screen = LockScreen(self.marionette)
