@@ -16,7 +16,6 @@ class TestActionOnNotification(GaiaTestCase):
         GaiaTestCase.setUp(self)
         
         sys.path.append("./")
-        #sys.path.append("./tests/functional/WPA-EAP")
 
         self.device.lock()
         self.device.turn_screen_off()
