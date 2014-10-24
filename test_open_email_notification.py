@@ -42,6 +42,7 @@ class TestActionOnNotification(GaiaTestCase):
         self.device.turn_screen_off()
         time.sleep(310)
         self.device.lock()
+        
         #Click notification
         notifications = self.marionette.find_elements(By.CSS_SELECTOR, '#notifications-lockscreen-container div[class="notification"]')
 
@@ -126,8 +127,7 @@ class TestActionOnNotification(GaiaTestCase):
         self.apps.kill(email.app)
         email.launch()
         email.wait_for_message_list()
-        time.sleep(1)
-        #email.delete_email_account(0)
+        time.sleep(1)        
         toolbar = email.header.tap_menu()
         m = self.marionette
         m.find_element(By.CSS_SELECTOR, '#cardContainer a[class="fld-nav-toolbar bottom-toolbar"]').tap()
