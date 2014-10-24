@@ -13,9 +13,6 @@ from gaiatest.apps.system.regions.time_picker import TimePicker
 
 class TestActionOnNotification(GaiaTestCase):
 
-    _notification_title = 'test'
-    _notification_body = 'test'
-
     def setUp(self):
         GaiaTestCase.setUp(self)
         
@@ -64,6 +61,9 @@ class TestActionOnNotification(GaiaTestCase):
         else:
             time_picker._flick_menu_up(time_picker._minutes_picker_locator)
                 
+        if int(current_hour) == 11:
+            time_picker.spin_hour24()
+            
         if int(current_hour) == 12:
             for no in range(11):
                 time_picker._flick_menu_up(time_picker._hour_picker_locator)
